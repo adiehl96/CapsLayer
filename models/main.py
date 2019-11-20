@@ -91,6 +91,7 @@ def train(model, data_loader):
         validation_handle = sess.run(validation_iterator.string_handle())
         init_op = tf.global_variables_initializer()
         sess.run(init_op)
+        train_acc = 0
         print("\nNote: all of results will be saved to directory: " + cfg.results_dir)
         for step in range(1, cfg.num_steps):
             start_time = time.time()
